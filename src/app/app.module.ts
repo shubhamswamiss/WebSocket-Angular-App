@@ -7,6 +7,7 @@ import { MessageSenderComponent } from './components/message-sender/message-send
 import { MessageReceiverComponent } from './components/message-receiver/message-receiver.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { WebsocketService } from './services/websocket.service';
+import { ChatRoomComponent } from './components/chat-room/chat-room.component';
 
 
 const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
@@ -15,7 +16,8 @@ const config: SocketIoConfig = { url: 'http://localhost:8080', options: {} };
   declarations: [
     AppComponent,
     MessageSenderComponent,
-    MessageReceiverComponent
+    MessageReceiverComponent,
+    ChatRoomComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+.custom-input {
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+  }
+  
+  .custom-input:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+  }
+  
+  .custom-btn {
+    border-radius: 25px; /* Rounded corners */
+    padding: 8px 15px; /* Padding */
+    font-size: 15px; /* Font size */
+  }
+  
+  .custom-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

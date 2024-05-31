@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { WebsocketService } from 'src/app/services/websocket.service';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-message-sender',
@@ -7,13 +6,13 @@ import { WebsocketService } from 'src/app/services/websocket.service';
   styleUrls: ['./message-sender.component.css']
 })
 export class MessageSenderComponent {
+  @Output() sendMessage = new EventEmitter<any>();
+  message: string = '';
 
-  message:string = '';
-
-  constructor(private websocketService:WebsocketService){}
-
-  sendMessage(){
-    this.websocketService.sendMessage(this.message);  
-    this.message = '';
+  send() {
+    if (this.message.trim()) {
+      this.sendMessage.emit({ text: this.message });
+      this.message = '';
+    }
   }
 }

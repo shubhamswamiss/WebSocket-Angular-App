@@ -14,6 +14,7 @@ export class MessageReceiverComponent implements OnInit {
   ngOnInit() {
     this.websocketService.getMessage().subscribe((message)  => {
       this.messages.push(message as string);
+      console.log(message);
     });
   }
 }
