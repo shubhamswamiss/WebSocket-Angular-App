@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Socket } from 'ngx-socket-io'
+import { Socket } from 'ngx-socket-io';
+
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
 
-  constructor(private socket:Socket) { }
+  constructor(private socket: Socket) { }
 
-  sendMessage(msg:string){
-    this.socket.emit("message",msg);
+  sendMessage(msg: any) {
+    this.socket.emit('message', msg);
   }
 
-  getMessage(){
+  getMessage() {
     return this.socket.fromEvent('message');
   }
 }
