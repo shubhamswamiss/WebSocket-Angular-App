@@ -20,3 +20,12 @@ color: white;
 margin-left: auto;
 text-align: end;
 }
+
+.right{
+  float: right;
+  clear: both;
+}
+.left{
+  float: left;
+  clear: both;
+}

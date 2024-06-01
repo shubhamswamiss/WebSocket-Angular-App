@@ -15,6 +15,7 @@ export class ChatRoomComponent implements OnInit {
   ngOnInit() {
     this.websocketService.getMessage().subscribe((message: any) => {
       message.self = message.senderId === this.currentUser; // Check if the message is from the current user
+      message.self= false;
       this.messages.push(message);
     });
   }
@@ -27,5 +28,6 @@ export class ChatRoomComponent implements OnInit {
     };
     this.websocketService.sendMessage(messageToSend);
     this.messages.push(messageToSend);
+    console.log(this.messages)
   }
 }

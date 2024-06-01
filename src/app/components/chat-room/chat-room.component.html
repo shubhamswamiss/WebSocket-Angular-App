@@ -5,18 +5,18 @@
     </div>
     <div class="card-body message-container">
       <div *ngFor="let message of messages" class="message my-2">
-        <div *ngIf="message.self; else elseBlock" class="text-right ifBlock">
+        <div  [ngClass]="message.self == true ? 'right':'left'">
           <div class="alert alert-primary d-inline-block">
             {{ message.text }}
           </div>
         </div>
-        <ng-template #elseBlock>
+        <!-- <ng-template #elseBlock>
           <div class="text-left elseBlock">
             <div class="alert alert-secondary d-inline-block">
               {{ message.text }}
             </div>
           </div>
-        </ng-template>
+        </ng-template> -->
       </div>
     </div>
     <div class="card-footer">
